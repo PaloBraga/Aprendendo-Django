@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta charset="utf-8">
+
+  <header>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  </header>
+  <nav>
+    <a href="http://127.0.0.1:8000" title="Home">Home</a>
+    <a href="http://127.0.0.1:8000/listagem" title="Listagem">Listagem</a>
+
+  </nav>
+  <main>
+    <h1>Listagem</h1>
+    <ul>
+    {% for transacao in transacoes %}
+        <li>{{ transacao.descricao }} - {{ transacao.data }} - 
+            {{ transacao.valor }} - {{ transacao.categoria }}</li>
+    {% endfor %}
+    </ul>
+    
+    <button><a href="{% url 'url_nova' %}">Nova Transação</a></button> 
+  </main>
+  <footer>
+  </footer>
+</body>
